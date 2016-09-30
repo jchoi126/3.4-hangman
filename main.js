@@ -2,41 +2,40 @@
 
   'use strict';
 
-  document.getElementById('start').addEventListener('click', addElement)
+  document.getElementById('start').addEventListener('click', addLetters)
+  document.getElementById('submit').addEventListener('click', addCorrectLetter)
 
   var letterContainer = document.getElementById('right_letters');
+  var letterFiller
+  var randomWord = commonWords[Math.floor(Math.random()*commonWords.length)];
 
-  function addElement () {
-    // create a new div element
-    // and give it some content
-    var newLetter = document.createElement("span");
+  function addLetters(){
 
-    letterContainer.appendChild(newLetter);
-    //var newContent = document.createTextNode("Hi there and greetings!");
-    // newDiv.appendChild(newContent); //add the text node to the newly created div.
-
-    // add the newly created element and its content into the DOM
-    // var currentDiv = document.getElementById("div1");
-    // document.body.insertBefore(newDiv, currentDiv);
+    console.log("random word",randomWord);
+https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
+    for(var i = 0; i< randomWord.length; i++){
+      var newLetter = document.createElement("span");
+      newLetter.className = 'noLetter' ;
+      newLetter.textContent = randomWord[i];
+      letterContainer.appendChild(newLetter);
+    }
   }
 
-})();
+function addCorrectLetter(){
+  letterFiller = document.getElementById('letterfield').value;
+  console.log(letterFiller);
+  for(var i = 0; i < randomWord.length; i++){
+  if(letterContainer.children[i].textContent == letterFiller){
+    console.log('yes');
+    letterContainer.children[i].style.color = 'black';
 
-// document.body.onload = addElement;
+  } else {
 
-document.getElementById('start').addEventListener('click', addElement)
-
-function addElement () {
-  console.log('firing');
-  // create a new div element
-  // and give it some content
-  // var newDiv = document.createElement("div");
-  // var newContent = document.createTextNode("Hi there and greetings!");
-  // newDiv.appendChild(newContent); //add the text node to the newly created div.
-
-  // add the newly created element and its content into the DOM
-  // var currentDiv = document.getElementById("div1");
-  // document.body.insertBefore(newDiv, currentDiv);
+  }
 }
 
-// addEventListener('click', currentDiv);
+
+
+
+}
+})();

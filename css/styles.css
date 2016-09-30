@@ -1,6 +1,29 @@
 #right_letters {
+  padding-right: 4px;
+  height: 35px;
+  display: inline-block;
+  text-align: center; }
+
+span {
   width: 35px;
   height: 35px;
-  background-color: green; }
+  margin-right: 5px;
+  border-bottom: 3px solid black;
+  display: inline-block;
+  float: left; }
+
+.button-div {
+  margin-top: 10px;
+  display: block; }
+
+#letterfield {
+  margin-top: 10px; }
+
+.noLetter {
+  color: white; }
+
+h3 {
+  float: left;
+  display: block; }
 
 /*# sourceMappingURL=styles.css.map */
